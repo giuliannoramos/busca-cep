@@ -25,7 +25,6 @@ import { InputTextModule } from 'primeng/inputtext';
 export class FormPageComponent {
   cep?: string = '';
   street?: string = '';
-  number?: string = '';
   complement?: string = '';
   district?: string = '';
   city?: string = '';
@@ -45,7 +44,6 @@ export class FormPageComponent {
           } else {
             this.cepError = false;
             this.street = data.logradouro;
-            this.number = data.numero;
             this.complement = data.complemento;
             this.district = data.bairro;
             this.city = data.localidade;
