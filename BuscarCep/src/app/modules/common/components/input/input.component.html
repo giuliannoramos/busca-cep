@@ -1,0 +1,11 @@
+<span class="p-float-label">
+  <input
+    pInputText
+    [id]="id"
+    [name]="name"
+    class="form-control"
+    [value]="value"
+    (input)="event()"
+  />
+  <label [for]="id">{{ label }}</label>
+</span>

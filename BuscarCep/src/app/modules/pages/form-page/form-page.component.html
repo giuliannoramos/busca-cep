@@ -1,0 +1,65 @@
+<div class="container">
+  <app-card>
+    <div *ngIf="cepError" class="alert alert-danger" role="alert">
+      CEP não encontrado.
+    </div>    
+    <span class="p-float-label">
+      <input
+        name="cep"
+        id="cep"
+        class="cep"
+        (input)="onInputCep()"
+        [(ngModel)]="cep"
+        pattern="^\d+$"
+        pInputText
+        #cepModel="ngModel"
+      />
+      <label for="cep">CEP</label>
+      <div *ngIf="cepModel.errors?.['pattern']" class="error-message">
+        O CEP deve conter apenas números.
+      </div>
+    </span>
+    <app-input
+      name="street"
+      id="street"
+      class="form-control"
+      [(ngModel)]="street"
+      label="Rua"
+    />
+    <app-input
+      name="number"
+      id="number"
+      class="form-control"
+      [(ngModel)]="number"
+      label="Número"
+    />
+    <app-input
+      name="complement"
+      id="complement"
+      class="form-control"
+      [(ngModel)]="complement"
+      label="Complemento"
+    />
+    <app-input
+      name="state"
+      id="state"
+      class="form-control"
+      [(ngModel)]="state"
+      label="Estado"
+    />
+    <app-input
+      name="city"
+      id="city"
+      class="form-control"
+      [(ngModel)]="city"
+      label="Cidade"
+    />
+    <app-input
+      name="district"
+      id="district"
+      class="form-control"
+      [(ngModel)]="district"
+      label="Bairro"
+    />
+  </app-card>
+</div>
