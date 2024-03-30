@@ -1,6 +1,25 @@
+::ng-deep {
+  .p-card {
+    width: 30vmax;
+  }
+}
+
 .content {
-    display: flex;
-    flex-direction: column;
-    gap: 3vmax;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3vmax;
+  align-items: center;
+  padding-top: 2vmax;
+}
+
+@media (max-width: 768px) {
+  ::ng-deep {
+    .p-card {
+      width: 100%;
+    }
+  }
+  .content {
+    gap: 6vmax;
+    padding-top: 5vmax;
+  }
 }
