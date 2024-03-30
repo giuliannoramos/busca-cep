@@ -5,8 +5,9 @@ import { FormPageComponent } from './modules/pages/form-page/form-page.component
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormPageComponent],
-  template: `<router-outlet />`
+  imports: [RouterOutlet],
+  template: `
+  <router-outlet />`
 })
 export class AppComponent {
   title = 'BuscarCep';
