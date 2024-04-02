@@ -43,6 +43,13 @@ export class FormPageComponent {
     this.cepError = false;
   }
 
+  clearCep(): void {
+    if (this.cep?.length != 8) {
+      this.clearFields();
+      this.cepError = false;
+    }
+  }
+
   onInputCep(): void {
     if (this.cep?.length === 8) {
       this.clearFields();
