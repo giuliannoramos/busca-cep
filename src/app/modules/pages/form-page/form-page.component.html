@@ -1,8 +1,5 @@
 <div class="container">
   <app-card>
-    <div *ngIf="cepError" class="alert alert-danger" role="alert">
-      CEP não encontrado.
-    </div>    
     <span class="p-float-label">
       <input
         name="cep"
@@ -11,13 +8,17 @@
         (input)="onInputCep()"
         [(ngModel)]="cep"
         pattern="^\d+$"
+        minlength="8"
+        maxlength="8"
         pInputText
         #cepModel="ngModel"
       />
       <label for="cep">CEP</label>
-      <div *ngIf="cepModel.errors?.['pattern']" class="error-message">
-        O CEP deve conter apenas números.
-      </div>
+      @if (cepModel.errors?.['pattern'] || cepModel.errors?.['minlength']) {
+      <div class="error-message">O CEP deve conter 8 dígitos numéricos.</div>
+      } @if (cepError) {
+      <div class="error-message">CEP não encontrado.</div>
+      }
     </span>
     <app-input
       name="street"
@@ -25,7 +26,7 @@
       class="form-control"
       [(ngModel)]="street"
       label="Rua"
-    />    
+    />
     <app-input
       name="complement"
       id="complement"

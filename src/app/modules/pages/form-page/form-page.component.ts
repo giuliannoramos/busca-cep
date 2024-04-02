@@ -34,8 +34,18 @@ export class FormPageComponent {
 
   constructor(private http: HttpClient) {}
 
+  clearFields(): void {
+    this.street = '';
+    this.complement = '';
+    this.district = '';
+    this.city = '';
+    this.state = '';
+    this.cepError = false;
+  }
+
   onInputCep(): void {
     if (this.cep?.length === 8) {
+      this.clearFields();
       this.http
         .get<IAddressInterface>(`https://viacep.com.br/ws/${this.cep}/json/`)
         .subscribe((data) => {
