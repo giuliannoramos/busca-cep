@@ -11,5 +11,5 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() img = 'assets/img/cepImage.png';  
+  @Input() img = 'assets/img/cepImage.svg';  
 }

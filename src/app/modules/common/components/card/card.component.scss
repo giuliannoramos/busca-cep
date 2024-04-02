@@ -1,6 +1,8 @@
 ::ng-deep {
   .p-card {
     width: 30vmax;
+    background-color: var(--body-dark);
+    color: var(--text);
   }
 }
 
@@ -10,6 +12,13 @@
   gap: 3vmax;
   align-items: center;
   padding-top: 2vmax;
+}
+
+.image {
+  display: flex;
+  padding: 1vmin;
+  width: 100%;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {

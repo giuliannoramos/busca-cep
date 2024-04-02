@@ -1,12 +1,12 @@
 .container {
   display: flex;
   padding: 2vmax;
-  background-color: #f1f5f9;
+  background-color: var(--body-light);
   align-items: center;
   justify-content: center;
 }
 
 .error-message {
-  color: red;
+  color: var(--error);
   font-size: 12px;
 }
