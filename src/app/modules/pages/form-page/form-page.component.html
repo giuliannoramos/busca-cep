@@ -8,14 +8,13 @@
         (blur)="onInputCep()"
         (input)="clearCep()"
         [(ngModel)]="cep"
-        pattern="^\d+$"
-        minlength="8"
-        maxlength="8"
         pInputText
         #cepModel="ngModel"
+        mask="00.000-000"
+        [ngModelOptions]="{ updateOn: 'blur' }"
       />
       <label for="cep">CEP</label>
-      @if (cepModel.errors?.['pattern'] || cepModel.errors?.['minlength']) {
+      @if (cepModel.errors?.['mask'] && cepModel.touched) {
       <div class="error-message">O CEP deve conter 8 dígitos numéricos.</div>
       } @if (cepError) {
       <div class="error-message">CEP não encontrado.</div>

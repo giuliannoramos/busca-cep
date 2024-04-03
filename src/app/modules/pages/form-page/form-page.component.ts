@@ -1,3 +1,4 @@
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { Component } from '@angular/core';
 import { CardComponent } from '../../common/components/card/card.component';
 import { InputComponent } from '../../common/components/input/input.component';
@@ -18,9 +19,12 @@ import { InputTextModule } from 'primeng/inputtext';
     FormsModule,
     CommonModule,
     InputTextModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss',
+  providers: [provideNgxMask()],
 })
 export class FormPageComponent {
   cep?: string = '';
@@ -44,10 +48,8 @@ export class FormPageComponent {
   }
 
   clearCep(): void {
-    if (this.cep?.length != 8) {
-      this.clearFields();
-      this.cepError = false;
-    }
+    this.clearFields();
+    this.cepError = false;
   }
 
   onInputCep(): void {

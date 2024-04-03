@@ -1,11 +1,9 @@
 import { InputTextModule } from 'primeng/inputtext';
 import {
   Component,
-  EventEmitter,
   forwardRef,
   Input,
   OnChanges,
-  Output,
   SimpleChanges,
 } from '@angular/core';
 import {
@@ -34,12 +32,6 @@ export class InputComponent implements ControlValueAccessor, OnChanges {
   @Input() id?: string;
   @Input() name?: string;
   @Input() value!: string;
-  @Output() cepBlur = new EventEmitter<void>();
-
-  event() : void {
-    this.cepBlur.emit();
-  }
-
 
   private touched = false;
 
